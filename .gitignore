@@ -1,0 +1,119 @@
+# ============================================
+# C# / .NET 上位机项目 .gitignore
+# 基于 GitHub 官方 VisualStudio 模板整理
+# ============================================
+
+# ---------- 构建产物 ----------
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+build/
+bld/
+[Bb]uilds/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.ilk
+*.meta
+*.obj
+*.ipch
+*.idb
+*.iobj
+*.lib
+*.so
+*.dylib
+
+# ---------- Visual Studio ----------
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.tmp
+*.bak
+*.swp
+*.[Cc]ache
+ipch/
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+*.VC.opendb
+.vscode/
+.idea/
+
+# ---------- Rider / 其他 IDE ----------
+*.DotSettings.user
+
+# ---------- NuGet ----------
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nupkg
+**/packages/repositories.config
+nuget.exe
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ---------- 发布输出 ----------
+[Rr]elease/
+*.publish.xml
+PublishProfiles/
+*.pubxml.user
+
+# ---------- 测试结果 ----------
+TestResults/
+[Ll]ogs/
+*.trx
+*.coverage
+*.coveragexml
+TestResult.xml
+
+# ---------- .NET Core / SDK 风格项目 ----------
+*.binlog
+*.log
+obj.project.assets.json
+
+# ---------- 用户敏感信息（环境/密钥，按需调整） ----------
+.env
+.env.*
+*.env
+appsettings.Local.json
+secrets.json
+*.pfx
+*.key
+*.crt
+
+# ---------- 串口/硬件调试相关临时文件（上位机常用） ----------
+*.Hex
+*.hex
+*.bin.fw
+*.log.txt
+captures/
+*.pcap
+*.pcapng
+
+# ---------- 安装包/发布包 ----------
+*.msi
+*.zip
+*.7z
+*.rar
+setup/Output/
+
+# ---------- 操作系统 ----------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+$RECYCLE.BIN/
+*.lnk
+
+# ---------- AI 辅助工具缓存 ----------
+.codebuddy/
+.claude/
+.cursor/
+copilot-*

@@ -1,0 +1,22 @@
+# <type>(<scope>): <subject>
+#
+# 示例: feat(serial): 新增串口自动扫描功能
+#
+# ---------- type 类型说明 ----------
+# feat     新功能
+# fix      修复 Bug
+# docs     仅文档变更
+# style    代码格式调整（不影响逻辑）
+# refactor 重构（既非新增功能也非修复）
+# perf     性能优化
+# test     新增/修改测试
+# build    构建系统或外部依赖变更（NuGet、csproj 等）
+# ci       CI 配置变更
+# chore    其他杂项（不影响 src 或 test）
+# revert   回滚某次提交
+#
+# ---------- 格式说明 ----------
+# scope（可选）: 影响范围，如 serial（串口）、ui、protocol、firmware
+# subject: 简短描述，中文/英文均可，不加句号
+# body（可选）: 空一行后写详细说明
+# footer（可选）: 关联 issue，如 Closes #12

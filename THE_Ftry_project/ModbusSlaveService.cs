@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace THE_Ftry_project
 {
-    internal class ModbusSlaveService
+    internal class ModbusSlaveService : IDisposable
     {
         private SerialPort _port2;
         private ModbusSerialSlave _slave;
@@ -36,7 +36,7 @@ namespace THE_Ftry_project
                 Task.Run(() =>
                 {
                     try { _slave.Listen(); }
-                    catch (Exception ex) { }
+                    catch  { }
                     
                 });
                 return true;
@@ -66,7 +66,8 @@ namespace THE_Ftry_project
             }
         }
 
-        public void IDisposable()
+        /// <summary>释放全部资源（实现 IDisposable 接口）</summary>
+        public void Dispose()
         {
             Close();
         }

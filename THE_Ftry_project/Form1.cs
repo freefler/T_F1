@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.Data;
 using System.IO.Ports;
 using System.Windows.Forms;
 
@@ -21,6 +22,30 @@ namespace THE_Ftry_project
             richTextBox1.ScrollToCaret();
         }
         #endregion
+        public string[] Select_por()
+        {
+            string[] ports = SerialPort.GetPortNames();
+            if (ports.Length > 0)
+            {
+                comboBox9.Items.AddRange(ports);
+                comboBox10.Items.AddRange(ports);
+                return ports;
+            }
+            using (RegistryKey key = Registry.LocalMachine.OpenSubKey(@"HARDWARE\DEVICEMAP\SERIALCOMM"))
+            {
+                richTextBox1.AppendText("系统未识别到可用串口,尝试注册表获取...");
+                if (key == null) { richTextBox1.AppendText("注册表未识别到可用串口"); return new string[0]; }
+                var list = new System.Collections.Generic.List<string>();
+                foreach (var name in key.GetValueNames())
+                {
+                    string portName = key.GetValue(name) as string;
+                    if (!string.IsNullOrEmpty(portName)) list.Add(portName);
+                }
+                comboBox9.Items.AddRange(list.ToArray());
+                comboBox10.Items.AddRange(list.ToArray());
+                return list.ToArray();
+            }
+        }
         private void Initial()
         {
             label1.Text = "连接状态：未连接";
@@ -33,20 +58,10 @@ namespace THE_Ftry_project
             comboBox7.Text = comboBox7.Items[0].ToString();
             comboBox4.Text = comboBox4.Items[0].ToString();
             comboBox8.Text = comboBox8.Items[0].ToString();
-            RegistryKey keycon = Registry.LocalMachine.OpenSubKey(@"Hardware\DeviceMap\SerialComm");
-            string[] sSubkey = keycon.GetValueNames();
-            foreach (var n in sSubkey)
-            {
-                string porName = (string)keycon.GetValue(n);
-                comboBox9.Items.Add(porName);
-                comboBox10.Items.Add(porName);
-            }
-            try
-            {
-                comboBox9.Text = comboBox9.Items[0].ToString();
-                try { comboBox10.Text = comboBox10.Items[1].ToString(); } catch { comboBox10.Text = comboBox10.Items[0].ToString(); }
-            }
-            catch { richTextBox1.AppendText("电脑未识别到可用串口"); }
+            string[] port_name = Select_por();
+            if (port_name.Length == 0) return;
+            comboBox9.Text = comboBox9.Items[0].ToString();
+            comboBox10.Text = comboBox10.Items[1].ToString();
         }//初始化
         private ModbusRtuService _rtu;
         private ModbusSlaveService _slave;
@@ -232,5 +247,25 @@ namespace THE_Ftry_project
 
         }//轮询
         #endregion
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable dt = new DBhelper().Method_Read();
+                richTextBox2.Clear();
+                foreach (DataRow row in dt.Rows)
+                {
+                    richTextBox2.AppendText(
+                $"{row["Id"]}  {row["TagName"]}  {row["TagValue"]}  " +
+                $"{((DateTime)row["CollectTime"]):yyyy-MM-dd HH:mm:ss}\r\n");
+                }
+
+
+            }
+            catch { }
+
+
+        }
     }
 }

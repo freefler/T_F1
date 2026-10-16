@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.mudbus1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -43,6 +45,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.mudbus2 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.comboBox10 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -60,14 +66,9 @@
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.timerPoll = new System.Windows.Forms.Timer(this.components);
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.mudbus1.SuspendLayout();
             this.mudbus2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -97,6 +98,22 @@
             this.mudbus1.TabIndex = 0;
             this.mudbus1.TabStop = false;
             this.mudbus1.Text = "主站";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(252, 153);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(45, 28);
+            this.textBox1.TabIndex = 14;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(211, 156);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(35, 18);
+            this.label13.TabIndex = 13;
+            this.label13.Text = "ID:";
             // 
             // label11
             // 
@@ -256,6 +273,38 @@
             this.mudbus2.TabIndex = 1;
             this.mudbus2.TabStop = false;
             this.mudbus2.Text = "从站";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(323, 153);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(45, 28);
+            this.textBox3.TabIndex = 16;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(217, 153);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(45, 28);
+            this.textBox2.TabIndex = 15;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(282, 156);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(35, 18);
+            this.label15.TabIndex = 15;
+            this.label15.Text = "ID:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(176, 156);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(35, 18);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "ID:";
             // 
             // label12
             // 
@@ -441,59 +490,9 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(211, 156);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(35, 18);
-            this.label13.TabIndex = 13;
-            this.label13.Text = "ID:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(176, 156);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(35, 18);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "ID:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(282, 156);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(35, 18);
-            this.label15.TabIndex = 15;
-            this.label15.Text = "ID:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(252, 153);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(45, 28);
-            this.textBox1.TabIndex = 14;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(217, 153);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(45, 28);
-            this.textBox2.TabIndex = 15;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(323, 153);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(45, 28);
-            this.textBox3.TabIndex = 16;
-            // 
             // timerPoll
             // 
             this.timerPoll.Interval = 1000;
-            // 【已废弃】轮询改由 ModbusRtuService.StartPoll 负责，Timer 不再使用
-            // this.timerPoll.Tick += new System.EventHandler(this.timerPoll_Tick);
             // 
             // button4
             // 
@@ -505,11 +504,22 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(403, 319);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(119, 36);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "查询数据";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1311, 763);
+            this.ClientSize = new System.Drawing.Size(1261, 762);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox2);
@@ -573,6 +583,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Timer timerPoll;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 

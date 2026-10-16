@@ -69,6 +69,8 @@
             this.timerPoll = new System.Windows.Forms.Timer(this.components);
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.mudbus1.SuspendLayout();
             this.mudbus2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -445,7 +447,8 @@
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox1.Location = new System.Drawing.Point(3, 24);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(373, 461);
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(424, 461);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             // 
@@ -454,7 +457,7 @@
             this.groupBox1.Controls.Add(this.richTextBox1);
             this.groupBox1.Location = new System.Drawing.Point(13, 226);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(379, 488);
+            this.groupBox1.Size = new System.Drawing.Size(430, 488);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "主站收发";
@@ -465,7 +468,8 @@
             this.richTextBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox2.Location = new System.Drawing.Point(3, 24);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(373, 461);
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.Size = new System.Drawing.Size(467, 461);
             this.richTextBox2.TabIndex = 3;
             this.richTextBox2.Text = "";
             // 
@@ -475,14 +479,14 @@
             this.groupBox2.Controls.Add(this.richTextBox2);
             this.groupBox2.Location = new System.Drawing.Point(655, 226);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(379, 488);
+            this.groupBox2.Size = new System.Drawing.Size(473, 488);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "从站收发";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(398, 198);
+            this.button3.Location = new System.Drawing.Point(454, 226);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(124, 40);
             this.button3.TabIndex = 6;
@@ -496,7 +500,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(403, 261);
+            this.button4.Location = new System.Drawing.Point(454, 289);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(119, 39);
             this.button4.TabIndex = 7;
@@ -506,19 +510,40 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(403, 319);
+            this.button5.Location = new System.Drawing.Point(1134, 250);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(119, 36);
+            this.button5.Size = new System.Drawing.Size(134, 36);
             this.button5.TabIndex = 8;
-            this.button5.Text = "查询数据";
+            this.button5.Text = "查询历史数据";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(1134, 354);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(134, 36);
+            this.button6.TabIndex = 9;
+            this.button6.Text = "手动录入数据";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(1134, 305);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(134, 36);
+            this.button7.TabIndex = 10;
+            this.button7.Text = "保存当前接收数据";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1261, 762);
+            this.ClientSize = new System.Drawing.Size(1335, 762);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -529,7 +554,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "主界面";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.mudbus1.ResumeLayout(false);
@@ -584,6 +609,8 @@
         private System.Windows.Forms.Timer timerPoll;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }
 

@@ -252,19 +252,26 @@ namespace THE_Ftry_project
         {
             try
             {
-                DataTable dt = new DBhelper().Method_Read();
+                DataTable dt = DBhelper.QueryHistorty(100);
                 richTextBox2.Clear();
                 foreach (DataRow row in dt.Rows)
-                {
-                    richTextBox2.AppendText(
-                $"{row["Id"]}  {row["TagName"]}  {row["TagValue"]}  " +
-                $"{((DateTime)row["CollectTime"]):yyyy-MM-dd HH:mm:ss}\r\n");
+                { 
+                    richTextBox2.AppendText($" {row["TagName"]}: {row["TagValue"]}—时间：{row["CollectTime"]}\r\n");
                 }
 
+            } 
+            catch (Exception ex)
+            { richTextBox2.AppendText("查询失败：" + ex.Message + "\r\n"); }
+        }
+        public string[] Insert_Themes() 
+        {
 
-            }
-            catch { }
 
+            return null;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
 
         }
     }
